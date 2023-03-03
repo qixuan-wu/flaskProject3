@@ -8,7 +8,7 @@
 
       {% for row in rows %}
       <p>Gamesale:
-         {{row["Name"]}},
+          <a href=  {{ url_for ('Gamelist') }} >{{ row[0] }} </a>
          {{row["NASales"]}},
          {{row["EUSales"]}},
 		 {{row["JPSales"]}},
