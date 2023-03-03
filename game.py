@@ -38,7 +38,7 @@ def orders():
     cur.execute("select * from Gamesale")
     rows = cur.fetchall()
     conn.close()
-    return render_template('Gamesale.html', rows=rows)
+    return render_template('GameSale.html', rows=rows)
 
 @app.route('/Gamesale_details/<id>')
 def order_details(id):
