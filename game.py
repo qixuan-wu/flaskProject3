@@ -17,6 +17,7 @@ def Gamelist():
     cur = conn.cursor()
     cur.execute("select * from Gamelist")
     rows = cur.fetchall()
+    print("gamelist", rows)
     conn.close()
     return render_template('Gamelist.html', gamelist=rows)
 
