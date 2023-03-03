@@ -9,7 +9,6 @@
 
       {% for row in gamesale %}
       <p>Order:
-         <b> <a href={{ url_for('GameSale_details', Name= row['Name']) }}>{{row["Name"]}}</a></b> |
          {{row["Gamelist_name"]}} |
          {{row[0]["NASales"]}} |
         {{ row[0]["EUSales"]}}

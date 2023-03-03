@@ -7,9 +7,8 @@
 
     <h1>The Gamelist</h1>
 
-    {% for row in gamelsit %}
+    {% for row in gamelist %}
     <p>Gamelist:
-       <b> <a href={{ url_for('Gamelist_details', Rank= row['Name']) }}>{{row["Name"]}}</a></b> |
        {{row["Rank"]}},
         {{ row["Name"]}},
        {{row['Platform']},
