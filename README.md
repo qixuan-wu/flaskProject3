@@ -2,7 +2,7 @@
 
 ## 1. What is it?
 This is a copy of the Video game sale icon that can be displayed on the website. You can view detailed information about each game on the website, such as the company that released the game, the type of game, the date it was released and how well it sold in each country.We have used mainly **python**  and **HTML**
-## 2. Design and development?
+## 2. Design and development
 
 ## 3.Installation
 The network platform we use here is called code, so we need to install some models before using the program.
