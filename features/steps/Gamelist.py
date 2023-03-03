@@ -13,7 +13,6 @@ def click(context):
 @then(u'I should see the Gamelist for that Gamesale')
 def details(context):
 
-    # use print(context.browser.page_source) to aid debugging
     print(context.browser.page_source)
     assert context.browser.current_url == 'http://localhost:5000/customer_details/2'
     assert '01595 Video Game Sales' in context.browser.page_source
