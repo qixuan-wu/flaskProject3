@@ -1,20 +1,65 @@
-<html >
+<html>
 <head>
     <title>The Gamesale</title>
+<style>
+    body {
+        background-color: #eaeaea;
+        font-family: Arial, sans-serif;
+    }
+    table {
+        border-collapse: collapse;
+        margin: 10px 0;
+        width: 100%;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+        vertical-align: top;
+    }
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+    .game-title a {
+        text-decoration: none;
+        color: inherit;
+    }
+    .game-title a:hover {
+        color: gray;
+        text-decoration: underline;
+    }
+</style>
 </head>
 <body>
-
-      <h1>The Gamesale</h1>
-
-      {% for row in rows %}
-      <p>Gamesale:
-          <a href=  {{ url_for ('Gamelist') }} >{{ row[0] }} </a>
-         {{row["NASales"]}},
-         {{row["EUSales"]}},
-		 {{row["JPSales"]}},
-        {{row["OtherSales"]}},
-		{{row["GlobalSales"]}},
-      </p>
-      {% endfor %}
+    <h1>The Gamesale</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Game Title</th>
+                <th>NASales</th>
+                <th>EUSales</th>
+                <th>JPSales</th>
+                <th>OtherSales</th>
+                <th>GlobalSales</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                <td class="game-title">
+                    <a href="{{ url_for('Gamelist') }}">
+                        {{ row[0] }}
+                    </a>
+                </td>
+                <td>{{ row["NASales"] }}</td>
+                <td>{{ row["EUSales"] }}</td>
+                <td>{{ row["JPSales"] }}</td>
+                <td>{{ row["OtherSales"] }}</td>
+                <td>{{ row["GlobalSales"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>
