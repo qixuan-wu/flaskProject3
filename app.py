@@ -29,4 +29,5 @@ def Gamesale():
     cur.execute("select * from Gamesale")
     rows = cur.fetchall()
     conn.close()
-    return render_template('GameSale.html', gamesale=rows)
+    return render_template('GameSale.html', rows=rows)
+app.run()

@@ -16,7 +16,6 @@ with open(r'C:\Users\Dell\PycharmProjects\flaskProject3\table\Gamelist.csv', new
     reader = csv.reader(f, delimiter=",")
     next(reader)
     for row in reader:
-        print(row)
 
         Rank = int(row[0])
         Name = str(row[1])
@@ -24,7 +23,7 @@ with open(r'C:\Users\Dell\PycharmProjects\flaskProject3\table\Gamelist.csv', new
         Year = int(row[3])
         Genre = str(row[4])
         Publisher = str(row[5])
-        #cur.execute('INSERT INTO Gamelist VALUES (?,?,?,?,?,?)', Rank,Name, Platform, Year, Genre, Publisher)
+        cur.execute('INSERT INTO Gamelist VALUES (?,?,?,?,?,?)', row)
         conn.commit()
 print("data parsed successfully")
 
@@ -39,8 +38,8 @@ with open(r'C:\Users\Dell\PycharmProjects\flaskProject3\table\Gamesale.csv', new
         EUSale = float(row[2])
         JPSale = float(row[3])
         OtherSales = float(row[4])
-        GlobalSales = float(row[4])
-        # cur.execute('INSERT INTO Gamesale VALUES (?,?,?,?,?,?)', Name, Platform, Year, Genre, Publisher)
+        GlobalSales = float(row[5])
+        cur.execute('INSERT INTO Gamesale VALUES (?,?,?,?,?,?)', row)
         conn.commit()
 print("data parsed successfully")
 conn.close()

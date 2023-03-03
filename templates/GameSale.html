@@ -6,14 +6,14 @@
 
       <h1>The Gamesale</h1>
 
-      {% for row in gamesale %}
+      {% for row in rows %}
       <p>Order:
-         {{row["Gamelist_name"]}} |
-         {{row[0]["NASales"]}} |
-         {{ row[0]["EUSales"]}}
-		 {{row[0]["JPSales"]}} |
-        {{ row[0]["OtherSales"]}}
-		{{ row[0]["GlobalSales"]}}
+         {{row[0]}} |
+         {{row["NASales"]}} |
+         {{ row["EUSales"]}}
+		 {{row["JPSales"]}} |
+        {{ row["OtherSales"]}}
+		{{ row["GlobalSales"]}}
       </p>
       {% endfor %}
 </body>
