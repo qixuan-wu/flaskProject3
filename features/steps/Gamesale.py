@@ -1,9 +1,9 @@
 from behave import given, when, then
 
-@given(u'I navigate to the Gamelist pages')
+@given(u'I navigate to the index pages')
 def nav(context):
 
-    context.browser.get('http://localhost:5000/GameSale')
+    context.browser.get('http://localhost:5000/index')
 
 @when(u'I click on the link to GameSale details')
 def click(context):
@@ -14,5 +14,5 @@ def click(context):
 def details(context):
 
     print(context.browser.page_source)
-    assert context.browser.current_url == 'http://localhost:5000/customer_details/2'
+    assert context.browser.current_url == 'http://localhost:5000/Gamesale/2'
     assert '01595 Video Game Sales' in context.browser.page_source

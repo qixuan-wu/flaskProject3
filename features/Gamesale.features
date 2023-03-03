@@ -2,6 +2,6 @@ Feature: Gamesale
 
 
 Scenario: success for visiting Gamesale and Gamesale details pages
-    Given I navigate to the Gamelist pages
-    When I click on the link to Gamelist details
-    Then I should see the Gamelist for that Gamesale
+            Given I navigate to the Gamelist pages
+            When I click on the link to Gamelist details
+            Then I should see the Gamelist for that Gamesale
