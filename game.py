@@ -11,42 +11,42 @@ def index():
     return render_template('index.html')
 
 @app.route('/Gamelist')
-def customers():
+def Gamelist():
     conn = sqlite3.connect(db_name)
     conn.row_factory = sqlite3.Row
     cur = conn.cursor()
     cur.execute("select * from Gamelist")
     rows = cur.fetchall()
     conn.close()
-    return render_template('Gamelist.html', rows=rows)
+    return render_template('Gamelist.html', gamelist=rows)
 
 @app.route('/Gamelist_details/<Rank>')
-def customer_details(Rank):
+def Gamelist_details(rank):
     conn = sqlite3.connect(db_name)
     conn.row_factory = sqlite3.Row
     cur = conn.cursor()
-    cur.execute("select * from Gamelist, Gamelist WHERE Rank=?",(Rank))
-    customer = cur.fetchall()
+    cur.execute("select * from Gamelist, gamelist WHERE rank=?",(rank))
+    gamelist = cur.fetchall()
     conn.close()
-    return render_template('Gamelist_details.html', Gamelist=Gamelist)
+    return render_template('Gamelist_details.html', gamelist=gamelist)
 
 @app.route('/Gamesale')
-def orders():
+def Gamesale():
     conn = sqlite3.connect(db_name)
     conn.row_factory = sqlite3.Row
     cur = conn.cursor()
     cur.execute("select * from Gamesale")
     rows = cur.fetchall()
     conn.close()
-    return render_template('GameSale.html', rows=rows)
+    return render_template('GameSale.html', gamesale=rows)
 
 @app.route('/Gamesale_details/<id>')
-def order_details(id):
+def Gamesale_details(name):
     conn = sqlite3.connect(db_name)
     conn.row_factory = sqlite3.Row
     cur = conn.cursor()
 
-    cur.execute("select * from Gamesale_detail WHERE Name=?", (Name))
-    order = cur.fetchall()
+    cur.execute("select * from Gamesale_detail WHERE name=?", (name))\
+    gamesale= cur.fetchall()
     conn.close()
-    return render_template('Gamesale_details.html', Gamesale=Gamesale)
+    return render_template('Gamesale_details.html', gamesale=gamesale)

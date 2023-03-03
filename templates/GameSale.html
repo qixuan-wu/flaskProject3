@@ -7,15 +7,15 @@
 
       <h1>The Gamesale</h1>
 
-      {% for row in rows %}
+      {% for row in gamesale %}
       <p>Order:
          <b> <a href={{ url_for('GameSale_details', Name= row['Name']) }}>{{row["Name"]}}</a></b> |
          {{row["Gamelist_name"]}} |
-         {{order[0]["NASales"]}} |
-        {{ order[0]["EUSales"]}}
-		 {{order[0]["JPSales"]}} |
-        {{ order[0]["OtherSales"]}}
-		{{ order[0]["GlobalSales"]}}
+         {{row[0]["NASales"]}} |
+        {{ row[0]["EUSales"]}}
+		 {{row[0]["JPSales"]}} |
+        {{ row[0]["OtherSales"]}}
+		{{ row[0]["GlobalSales"]}}
       </p>
       {% endfor %}
 </body>
