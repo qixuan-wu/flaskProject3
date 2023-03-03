@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Gamelist</title>
+</head>
+<body>
+
+    <h1>The Gamelist</h1>
+
+    {% for row in rows %}
+    <p>Gamelist:
+       <b> <a href={{ url_for('Gamelist_details', Rank= row['Name']) }}>{{row["Name"]}}</a></b> |
+       {{row["Rank"]}},
+        {{ row["Name"]}},
+       {{row['Platform']},
+	   {{row["Year"]}},
+        {{ row["Genre"]}},
+       {{row['Publisher']}.
+    </p>
+    {% endfor %}
+</body>
+</html>
