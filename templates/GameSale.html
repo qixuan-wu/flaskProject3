@@ -7,13 +7,13 @@
       <h1>The Gamesale</h1>
 
       {% for row in rows %}
-      <p>Order:
-         {{row[0]}} |
-         {{row["NASales"]}} |
-         {{ row["EUSales"]}}
-		 {{row["JPSales"]}} |
-        {{ row["OtherSales"]}}
-		{{ row["GlobalSales"]}}
+      <p>Gamesale:
+         {{row["Name"]}},
+         {{row["NASales"]}},
+         {{row["EUSales"]}},
+		 {{row["JPSales"]}},
+        {{row["OtherSales"]}},
+		{{row["GlobalSales"]}},
       </p>
       {% endfor %}
 </body>

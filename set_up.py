@@ -31,7 +31,6 @@ with open(r'C:\Users\Dell\PycharmProjects\flaskProject3\table\Gamesale.csv', new
     reader = csv.reader(f, delimiter=",")
     next(reader)
     for row in reader:
-        print(row)
 
         Name = str(row[0])
         NASales = float(row[1])
