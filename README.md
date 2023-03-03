@@ -19,7 +19,7 @@ pip install Flask
 ```
 3. open the programming
 ```
-1.cd file name
+1.cd flaskProject3
 2.export FLASK_APP=game.py
 3.export FLASK_ENV=development
 4.python -m flask run -h 0.0.0.0/
