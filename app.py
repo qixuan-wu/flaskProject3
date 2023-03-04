@@ -20,7 +20,7 @@ def Gamelist():
         conn.close()
         return render_template('Gamelist.html', gamelist=rows)
     except:
-        abort(404, "The requested resource was not found on this server.")
+        abort(404, "The requested resource was not found on this server.Please try again!")
 
 @app.route('/Gamesale')
 def Gamesale():
@@ -33,7 +33,7 @@ def Gamesale():
         conn.close()
         return render_template('GameSale.html', rows=rows)
     except:
-        abort(404, "The requested resource was not found on this server.")
+        abort(404, "The requested resource was not found on this server.Please try again!")
 
 if __name__ == '__main__':
     app.run()
