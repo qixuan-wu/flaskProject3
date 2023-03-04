@@ -34,7 +34,7 @@ flask init-db
 5. Run the application:
 ```
 1. cd flaskProject3
-2. export FLASK_APP=game.py
+2. export FLASK_APP=app.py
 3. export FLASK_ENV=development
 4. python -m flask run -h 0.0.0.0/
 5. project Box info 
