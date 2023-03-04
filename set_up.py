@@ -40,7 +40,12 @@ with open(r'C:\Users\Dell\PycharmProjects\flaskProject3\table\Gamesale.csv', new
         JPSale = float(row[3])
         OtherSales = float(row[4])
         GlobalSales = float(row[5])
-        cur.execute('INSERT INTO Gamesale VALUES (?,?,?,?,?,?)', row)
+        try:
+            cur.execute('INSERT INTO Gamesale VALUES (?,?,?,?,?,?)', row)
+            conn.commit()
+        except sqlite3.IntegrityError:
+            print("Error: Duplicate Name value")
+            break
         conn.commit()
 print("data parsed successfully")
 conn.close()
