@@ -13,7 +13,6 @@ The network platform we use here is called code, so we need to install some mode
 
 ```
  git clone https://github.com/qixuan-wu/flaskProject3.git
- cd flaskProject3
 ```
 2. Create a virtual environment and activate it:
 ```
@@ -28,7 +27,7 @@ The network platform we use here is called code, so we need to install some mode
 pip install flask
 ```
 
-```
+
 4. Run the application:
 ```
 1. cd flaskProject3
