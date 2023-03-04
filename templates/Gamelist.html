@@ -1,20 +1,51 @@
 <html>
 <head>
     <title>The Gamelist</title>
+    <style>
+        body {
+            background-color: grey;
+            font-family: Arial, sans-serif;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            text-align: left;
+            padding: 8px;
+            border-bottom: 1px solid white;
+            color: white;
+        }
+        th {
+            background-color: black;
+        }
+        tr:hover {
+            background-color: white;
+            color: grey;
+        }
+    </style>
 </head>
 <body>
-
     <h1>The Gamelist</h1>
-    {% for row in gamelist %}
-    <p>Gamelist:
-       {{row["Rank"]}},
-        <a href=  {{ url_for ('Gamesale') }} >{{ row[1] }} </a>
-
-       {{row['Platform']}},
-	   {{row["Year"]}},
-        {{ row["Genre"]}},
-       {{row['Publisher']}}.
-    </p>
-    {% endfor %}
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Platform</th>
+            <th>Year</th>
+            <th>Genre</th>
+            <th>Publisher</th>
+        </tr>
+        {% for row in gamelist %}
+        <tr>
+            <td>{{row["Rank"]}}</td>
+            <td><a href="{{ url_for('Gamesale') }}">{{ row[1] }}</a></td>
+            <td>{{row['Platform']}}</td>
+            <td>{{row["Year"]}}</td>
+            <td>{{row["Genre"]}}</td>
+            <td>{{row['Publisher']}}</td>
+        </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>
